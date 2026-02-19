@@ -139,7 +139,13 @@ const GenerarProyecto = () => {
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="space-y-2">
                   <Label>Nivel Educativo</Label>
-                  <Select value={state.nivel} onValueChange={(v) => updateField('nivel', v)}>
+                  <Select 
+                    value={state.nivel} 
+                    onValueChange={(v) => {
+                      console.log("Cambiando nivel a:", v);
+                      updateField('nivel', v);
+                    }}
+                  >
                     <SelectTrigger><SelectValue placeholder="Selecciona nivel" /></SelectTrigger>
                     <SelectContent>
                       <SelectItem value="preescolar">Preescolar</SelectItem>
